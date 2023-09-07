@@ -1,0 +1,9 @@
+{
+    "development": {
+      "username": "root",
+      "password": "",
+      "database": "anime_db",
+      "host": "localhost",
+      "dialect": "postgres"
+    }
+  }
