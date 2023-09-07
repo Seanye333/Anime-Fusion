@@ -1,0 +1,232 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Anime Fusion
+      </h1>
+      <p class="subtitle">
+        Welcome to our <strong> Anime Fusion </strong> Homepage !
+      </p>
+      <form class="box is-small is-forth-quarter" >
+        <div class="field is-small">
+          <label class="label is-small">Email</label>
+          <div class="control is-small">
+            <input class="input is-small" type="email" placeholder="e.g. alex@example.com">
+          </div>
+        </div>
+      
+        <div class="field is-small">
+          <label class="label is-small">Password</label>
+          <div class="control is-small">
+            <input class="input is-small" type="password" placeholder="********">
+          </div>
+        </div>
+        <button class="button is-primary is-small">Sign in</button>
+    </form>
+      <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    Navigation Section
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <!-- Left Section - Top 5 Favorite Anime -->
+                <div class="column is-one-quarter">
+                    <h2 class="title has-text-centered notification is-danger">Top 5 Favorite Anime</h2>
+                    <ol>
+                        <li class="notification has-background-warning-light has-text-centered is-size-2"><a href="#" onclick="showPopup('Anime 1', 'Description of Anime 1', 'anime1.jpg')">Anime 1</a></li>
+                        <li class="notification has-background-info-light has-text-centered is-size-2"><a href="#" onclick="showPopup('Anime 2', 'Description of Anime 2', 'anime2.jpg')">Anime 2</a></li>
+                        <li class="notification has-background-success-light has-text-centered is-size-2"><a href="#" onclick="showPopup('Anime 3', 'Description of Anime 3', 'anime3.jpg')">Anime 3</a></li>
+                        <li class="notification has-background-danger-light has-text-centered is-size-2"><a href="#" onclick="showPopup('Anime 4', 'Description of Anime 4', 'anime4.jpg')">Anime 4</a></li>
+                        <li class="notification has-background-primary-light has-text-centered is-size-2"><a href="#" onclick="showPopup('Anime 5', 'Description of Anime 5', 'anime5.jpg')">Anime 5</a></li>
+                    </ol>
+                </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                <!-- Anime Section 1 -->
+                <div class="column is-one-quarter">
+                    <div class="box">
+                        <img src="anime1.jpg" alt="Anime 1">
+                        <p class="title">Anime Title 1</p>
+                        <p class="subtitle">Description of Anime 1</p>
+                         <!-- Like and Dislike buttons and counters -->
+                        <div class="field is-grouped">
+                            <p class="control">
+                                <button class="button is-success is-small is-fullwidth" onclick="likeAnime(1)">Like</button>
+                            </p>
+                            <p class="control">
+                                <button class="button is-danger is-small is-fullwidth" onclick="dislikeAnime(1)">Dislike</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anime Section 2 -->
+                <div class="column is-one-quarter">
+                    <div class="box">
+                        <img src="anime2.jpg" alt="Anime 2">
+                        <p class="title">Anime Title 2</p>
+                        <p class="subtitle">Description of Anime 2</p>
+                    </div>
+                </div>
+
+                <!-- Anime Section 3 -->
+                <div class="column is-one-quarter">
+                    <div class="box">
+                        <img src="anime3.jpg" alt="Anime 3">
+                        <p class="title">Anime Title 3</p>
+                        <p class="subtitle">Description of Anime 3</p>
+                    </div>
+                </div>
+
+                <!-- Anime Section 4 -->
+                <div class="column is-one-quarter">
+                    <div class="box">
+                        <img src="anime4.jpg" alt="Anime 4">
+                        <p class="title">Anime Title 4</p>
+                        <p class="subtitle">Description of Anime 4</p>
+                    </div>
+                </div>
+                <!-- Anime Section 5 -->
+                <div class="column is-one-quarter">
+                    <div class="box">
+                        <img src="anime5.jpg" alt="Anime 5">
+                        <p class="title">Anime Title 5</p>
+                        <p class="subtitle">Description of Anime 5</p>
+                    </div>
+                </div>
+
+                <!-- Anime Section 6 -->
+                <div class="column is-one-quarter">
+                    <div class="box">
+                        <img src="anime6.jpg" alt="Anime 6">
+                        <p class="title">Anime Title 6</p>
+                        <p class="subtitle">Description of Anime 6</p>
+                    </div>
+                </div>
+
+                <!-- Anime Section 7 -->
+                <div class="column is-one-quarter">
+                    <div class="box">
+                        <img src="anime7.jpg" alt="Anime 7">
+                        <p class="title">Anime Title 7</p>
+                        <p class="subtitle">Description of Anime 7</p>
+                    </div>
+                </div>
+
+                <!-- Anime Section 8 -->
+                <div class="column is-one-quarter">
+                    <div class="box">
+                        <img src="anime8.jpg" alt="Anime 8">
+                        <p class="title">Anime Title 8</p>
+                        <p class="subtitle">Description of Anime 8</p>
+                    </div>
+                </div>
+
+                <!-- Anime Section 9 -->
+                <div class="column is-one-quarter">
+                    <div class="box">
+                        <img src="anime9.jpg" alt="Anime 9">
+                        <p class="title">Anime Title 9</p>
+                        <p class="subtitle">Description of Anime 9</p>
+                    </div>
+                </div>
+
+                <!-- Anime Section 10 -->
+                <div class="column is-one-quarter">
+                    <div class="box">
+                        <img src="anime10.jpg" alt="Anime 10">
+                        <p class="title">Anime Title 10</p>
+                        <p class="subtitle">Description of Anime 10</p>
+                    </div>
+                </div>
+
+                <!-- Anime Section 11 -->
+                <div class="column is-one-quarter">
+                    <div class="box">
+                        <img src="anime11.jpg" alt="Anime 11">
+                        <p class="title">Anime Title 11</p>
+                        <p class="subtitle">Description of Anime 11</p>
+                    </div>
+                </div>
+
+                <!-- Anime Section 12 -->
+                <div class="column is-one-quarter">
+                    <div class="box">
+                        <img src="anime12.jpg" alt="Anime 12">
+                        <p class="title">Anime Title 12</p>
+                        <p class="subtitle">Description of Anime 12</p>
+                    </div>
+                </div>
+                 <!-- Pop-up Window -->
+    <div id="popup" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box">
+                <button class="delete" onclick="closePopup()"></button>
+                <h2 id="popupTitle" class="title"></h2>
+                <p id="popupDescription" class="subtitle"></p>
+                <img id="popupImage" src="" alt="Anime Image">
+            </div>
+        </div>
+    </div>
+          <!-- Add a button to navigate to the watchlist page -->
+                <div class="has-text-centered">
+                    <a class="button is-primary" href="watchlist.html">Go to Watchlist</a>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+       <!-- Anime Rating Form -->
+       <div class="box">
+        <form id="rating-form">
+            <div class="field">
+                <label class="label">Anime Title</label>
+                <div class="control">
+                    <input class="input" type="text" id="anime-title" required>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Your Rating (out of 10)</label>
+                <div class="control">
+                    <input class="input" type="number" id="anime-rating" min="1" max="10" required>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="button is-primary" type="submit">Submit Rating</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Display Ratings -->
+    <div id="ratings-list">
+        <!-- Ratings will be displayed here -->
+    </div>
+</div>
+</section>
+    </div>
+  </section>
+  <script src="./assets/css/script.js"></script>
+  </body>
+</html>
