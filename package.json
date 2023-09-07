@@ -17,5 +17,8 @@
     "mongoose": "^7.5.0",
     "mysql2": "^3.6.0",
     "sequelize": "^6.32.1"
+  },
+  "devDependencies": {
+    "@types/sequelize": "^4.28.15"
   }
 }
