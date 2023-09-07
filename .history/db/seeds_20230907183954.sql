@@ -9,8 +9,8 @@ INSERT INTO Anime (title, genre, episodes, release_year) VALUES
     ('Demon Slayer: Kimetsu no Yaiba', 'Action, Fantasy', 26, 2019),
     ('One Punch Man', 'Action, Comedy', 24, 2015);
 
--- Inserting data into the `Character` table
-INSERT INTO `Character` (name, anime_id) VALUES
+-- Inserting data into the Character table
+INSERT INTO Character (name, anime_id) VALUES
     ('Naruto Uzumaki', 1),
     ('Monkey D. Luffy', 2),
     ('Eren Yeager', 3),

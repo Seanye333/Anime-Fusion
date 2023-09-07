@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS Anime (
     release_year INT
 );
 
-CREATE TABLE IF NOT EXISTS `Character` (
+CREATE TABLE IF NOT EXISTS Character (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     anime_id INT,
