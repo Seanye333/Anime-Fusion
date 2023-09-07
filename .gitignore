@@ -4,10 +4,6 @@ node_modules/
 # Ignore npm log files
 npm-debug.log*
 
-# Ignore IDE-specific files
-.vscode/
-.idea/
-
 # Ignore OS-specific files
 .DS_Store
 Thumbs.db
@@ -18,4 +14,4 @@ Thumbs.db
 # Ignore compiled code or build artifacts
 /build/
 /dist/
-
+.history/

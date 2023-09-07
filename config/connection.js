@@ -1,20 +1,22 @@
 const { Sequelize } = require('sequelize');
 
-// Load database configuration from your config file (e.g., config.json)
-const config = require('../config/config.json')['development']; // Change to your desired environment
+require('dotenv').config();
 
+let sequelize;
 // Initialize Sequelize with the database configuration
-const sequelize = new Sequelize(
-  config.database,
-  config.username,
-  config.password,
-  {
-    host: config.host,
-    dialect: config.dialect,
-    // Additional options can be added here (e.g., logging, pool, etc.)
-  }
-);
-
+if (process.env.JAWSDB_URL) {
+  sequelize = new Sequelize(process.env.JAWSDB_URL);
+} else {
+  sequelize = new Sequelize(
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PASSWORD,
+    {
+      host: process.env.DB_HOST,
+      dialect: 'mysql'
+    }
+  );
+}
 // Test the database connection
 async function testConnection() {
   try {
@@ -28,5 +30,5 @@ async function testConnection() {
 // Export the initialized Sequelize instance
 module.exports = {
   sequelize,
-  testConnection,
+  testConnection
 };
