@@ -1,24 +1,23 @@
 const express = require('express');
 const router = express.Router();
-const Users = require('../../models/User');
-const Users_anime = require('../../models/User');
-const Anime = require('../../models/Anime');
-const Character = require('../../models/Character');
+const modelsPath = path.join(__dirname, '../models');
+const { User, UserAnime, Anime, Character } = require(modelsPath);
 
 // Route to get all Users
 router.get('/users', async (req, res) => {
   try {
-    const usersList = await Users.findAll();
+    const usersList = await User.findAll();
     res.json(usersList);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error' });
   }
 });
-//router to get all from the Users_anime table
+
+// Route to get all from the Users_anime table
 router.get('/users_anime', async (req, res) => {
   try {
-    const usersAnimeList = await Users_anime.findAll();
+    const usersAnimeList = await UserAnime.findAll();
     res.json(usersAnimeList);
   } catch (error) {
     console.error(error);
