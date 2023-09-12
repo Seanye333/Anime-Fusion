@@ -2,6 +2,12 @@ const express = require('express');
 const app = express();
 const routes = require('./routes');
 const sequelize = require('./config/connection');
+const exphbs  = require('express-handlebars');
+const hbs  = exphbs.create({});
+
+// Setting View Engine To Handlebars
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 // Middleware for parsing JSON data
 app.use(express.json());
