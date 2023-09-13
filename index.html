@@ -1,11 +1,11 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>Anime Fusion</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
   </head>
   <body>
   <section class="section">
@@ -16,7 +16,7 @@
       <p class="subtitle">
         Welcome to our <strong> Anime Fusion </strong> Homepage !
       </p>
-      <form class="box is-small is-forth-quarter" >
+      <!-- <form class="box is-small is-forth-quarter" >
         <div class="field is-small">
           <label class="label is-small">Email</label>
           <div class="control is-small">
@@ -31,7 +31,7 @@
           </div>
         </div>
         <button class="button is-primary is-small">Sign in</button>
-    </form>
+    </form> -->
       <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
@@ -42,351 +42,197 @@
             </div>
         </div>
     </nav>
-
+ 
     <section class="section">
         <div class="container">
             <div class="columns">
                 <!-- Left Section - Top 5 Favorite Anime -->
-                <div class="column is-one-quarter">
-                    <h2 class="title has-text-centered notification is-danger">Top 5 Favorite Anime</h2>
+                <div class="column is-one-forth">
+                    <h2 class="title has-text-centered notification is-danger is-size-2">Top 5</h2>
                     <ol>
-                        <li class="notification has-background-warning-light has-text-centered is-size-2"><a href="#" onclick="showPopup('Anime 1', 'Description of Anime 1', 'anime1.jpg')">Anime 1</a></li>
-                        <li class="notification has-background-info-light has-text-centered is-size-2"><a href="#" onclick="showPopup('Anime 2', 'Description of Anime 2', 'anime2.jpg')">Anime 2</a></li>
-                        <li class="notification has-background-success-light has-text-centered is-size-2"><a href="#" onclick="showPopup('Anime 3', 'Description of Anime 3', 'anime3.jpg')">Anime 3</a></li>
-                        <li class="notification has-background-danger-light has-text-centered is-size-2"><a href="#" onclick="showPopup('Anime 4', 'Description of Anime 4', 'anime4.jpg')">Anime 4</a></li>
-                        <li class="notification has-background-primary-light has-text-centered is-size-2"><a href="#" onclick="showPopup('Anime 5', 'Description of Anime 5', 'anime5.jpg')">Anime 5</a></li>
+                        <li class="notification has-background-warning-light has-text-centered is-size-2"><a href="#" onclick="showPopup('Anime 1', 'Description of Anime 1', 'anime1.jpg')">No.1 Anime</a></li>
+                        <li class="notification has-background-info-light has-text-centered is-size-2"><a href="#" onclick="showPopup('Anime 2', 'Description of Anime 2', 'anime2.jpg')">No.2 Anime</a></li>
+                        <li class="notification has-background-success-light has-text-centered is-size-2"><a href="#" onclick="showPopup('Anime 3', 'Description of Anime 3', 'anime3.jpg')">No.3 Anime</a></li>
+                        <li class="notification has-background-danger-light has-text-centered is-size-2"><a href="#" onclick="showPopup('Anime 4', 'Description of Anime 4', 'anime4.jpg')">No.4 Anime</a></li>
+                        <li class="notification has-background-primary-light has-text-centered is-size-2"><a href="#" onclick="showPopup('Anime 5', 'Description of Anime 5', 'anime5.jpg')">No.5 Anime</a></li>
                     </ol>
                 </div>
 
     <section class="section">
-
         <div class="container">
             <div class="columns is-multiline">
                 <!-- Anime Section 1 -->
                 <div class="column is-one-third">
                     <div class="box">
-                        <p class="title is-size-2">Anime Title 1</p>
-                        <p class="character">place holder for character</p>
-                        <p class="review">place holder for review</p>
+                        <div class="anime-section">
+                            <h2 class="anime-title"></h2>
+                            <img class="anime-cover" src="" alt="Cover Image">
+                            <p class="anime-description"></p>
+                            <ul class="anime-reviews"></ul>
+                            <ul class="anime-characters"></ul>
+                        </div>
                          <!-- Like and Dislike buttons and counters add button for watchlist -->
                         <div class="field is-grouped">
-                            <p id = "like" class="control" >
+                            <p class="control">
                                 <button class="button is-success is-medium is-fullwidth" onclick="likeAnime(1)">Like</button>
                             </p>
-                            <p id = "dislike" class="control" >
+                            <p class="control">
                                 <button class="button is-danger is-medium is-fullwidth" onclick="dislikeAnime(1)">Dislike</button>
                             </p>
                             <!-- adds watchlist button-->
-                    
                         </div>
-                         <!-- adds watchlist button-->
-                        <p id = "watchlist" class="control" >
-                            <button class="button is-info is-medium is-fullwidth">watchList</button>
+                        <p class="control">
+                            <button class="button is-info is-medium is-fullwidth">Watchlist</button>
                         </p>
                     </div>
                 </div>
-
-                <!-- Anime Section 2 -->
+                 <!-- Anime Section 2 -->
                 <div class="column is-one-third">
                     <div class="box">
-                        <p class="title is-size-2">Anime Title 2</p>
-                        <p class="character">place holder for character</p>
-                        <p class="review">place holder for review</p>
+                        <div class="anime-section">
+                            <h2 class="anime-title"></h2>
+                            <img class="anime-cover" src="" alt="Cover Image">
+                            <p class="anime-description"></p>
+                            <ul class="anime-reviews"></ul>
+                            <ul class="anime-characters"></ul>
+                        </div>
                          <!-- Like and Dislike buttons and counters add button for watchlist -->
                         <div class="field is-grouped">
-                            <p id = "like" class="control" >
-                                <button class="button is-success is-medium is-fullwidth" onclick="likeAnime(1)">Like</button>
+                            <p class="control">
+                                <button class="button is-success is-medium is-fullwidth" onclick="likeAnime(2)">Like</button>
                             </p>
-                            <p id = "dislike" class="control" >
-                                <button class="button is-danger is-medium is-fullwidth" onclick="dislikeAnime(1)">Dislike</button>
+                            <p class="control">
+                                <button class="button is-danger is-medium is-fullwidth" onclick="dislikeAnime(2)">Dislike</button>
                             </p>
                             <!-- adds watchlist button-->
-                    
                         </div>
-                         <!-- adds watchlist button-->
-                        <p id = "watchlist" class="control" >
-                            <button class="button is-info is-medium is-fullwidth">watchList</button>
+                        <p class="control">
+                            <button class="button is-info is-medium is-fullwidth">Watchlist</button>
                         </p>
                     </div>
                 </div>
-
                 <!-- Anime Section 3 -->
                 <div class="column is-one-third">
                     <div class="box">
-                        <p class="title is-size-2">Anime Title 3</p>
-                        <p class="character">place holder for character</p>
-                        <p class="review">place holder for review</p>
-                         <!-- Like and Dislike buttons and counters add button for watchlist -->
+                        <div class="anime-section">
+                            <h2 class="anime-title"></h2>
+                            <img class="anime-cover" src="" alt="Cover Image">
+                            <p class="anime-description"></p>
+                            <ul class="anime-reviews"></ul>
+                            <ul class="anime-characters"></ul>
+                        </div>
+                        <!-- Like and Dislike buttons and counters add button for watchlist -->
                         <div class="field is-grouped">
-                            <p id = "like" class="control" >
-                                <button class="button is-success is-medium is-fullwidth" onclick="likeAnime(1)">Like</button>
+                            <p class="control">
+                                <button class="button is-success is-medium is-fullwidth" onclick="likeAnime(3)">Like</button>
                             </p>
-                            <p id = "dislike" class="control" >
-                                <button class="button is-danger is-medium is-fullwidth" onclick="dislikeAnime(1)">Dislike</button>
+                            <p class="control">
+                                <button class="button is-danger is-medium is-fullwidth" onclick="dislikeAnime(3)">Dislike</button>
                             </p>
                             <!-- adds watchlist button-->
-                    
                         </div>
-                         <!-- adds watchlist button-->
-                        <p id = "watchlist" class="control" >
-                            <button class="button is-info is-medium is-fullwidth">watchList</button>
+                        <p class="control">
+                            <button class="button is-info is-medium is-fullwidth">Watchlist</button>
                         </p>
                     </div>
                 </div>
                 <!-- Anime Section 4 -->
                 <div class="column is-one-third">
                     <div class="box">
-                        <p class="title is-size-2">Anime Title 4</p>
-                        <p class="character">place holder for character</p>
-                        <p class="review">place holder for review</p>
-                         <!-- Like and Dislike buttons and counters add button for watchlist -->
+                        <div class="anime-section">
+                            <h2 class="anime-title"></h2>
+                            <img class="anime-cover" src="" alt="Cover Image">
+                            <p class="anime-description"></p>
+                            <ul class="anime-reviews"></ul>
+                            <ul class="anime-characters"></ul>
+                        </div>
+                        <!-- Like and Dislike buttons and counters add button for watchlist -->
                         <div class="field is-grouped">
-                            <p id = "like" class="control" >
-                                <button class="button is-success is-medium is-fullwidth" onclick="likeAnime(1)">Like</button>
+                            <p class="control">
+                                <button class="button is-success is-medium is-fullwidth" onclick="likeAnime(4)">Like</button>
                             </p>
-                            <p id = "dislike" class="control" >
-                                <button class="button is-danger is-medium is-fullwidth" onclick="dislikeAnime(1)">Dislike</button>
+                            <p class="control">
+                                <button class="button is-danger is-medium is-fullwidth" onclick="dislikeAnime(4)">Dislike</button>
                             </p>
                             <!-- adds watchlist button-->
-                    
                         </div>
-                         <!-- adds watchlist button-->
-                        <p id = "watchlist" class="control" >
-                            <button class="button is-info is-medium is-fullwidth">watchList</button>
+                        <p class="control">
+                            <button class="button is-info is-medium is-fullwidth">Watchlist</button>
                         </p>
                     </div>
                 </div>
-
-                <!-- Anime Section 5 -->
-                <div class="column is-one-third">
+                 <!-- Anime Section 5 -->
+                 <div class="column is-one-third">
                     <div class="box">
-                        <p class="title is-size-2">Anime Title 1</p>
-                        <p class="character">place holder for character</p>
-                        <p class="review">place holder for review</p>
-                         <!-- Like and Dislike buttons and counters add button for watchlist -->
+                        <div class="anime-section">
+                            <h2 class="anime-title"></h2>
+                            <img class="anime-cover" src="" alt="Cover Image">
+                            <p class="anime-description"></p>
+                            <ul class="anime-reviews"></ul>
+                            <ul class="anime-characters"></ul>
+                        </div>
+                        <!-- Like and Dislike buttons and counters add button for watchlist -->
                         <div class="field is-grouped">
-                            <p id = "like" class="control" >
-                                <button class="button is-success is-medium is-fullwidth" onclick="likeAnime(1)">Like</button>
+                            <p class="control">
+                                <button class="button is-success is-medium is-fullwidth" onclick="likeAnime(5)">Like</button>
                             </p>
-                            <p id = "dislike" class="control" >
-                                <button class="button is-danger is-medium is-fullwidth" onclick="dislikeAnime(1)">Dislike</button>
+                            <p class="control">
+                                <button class="button is-danger is-medium is-fullwidth" onclick="dislikeAnime(5)">Dislike</button>
                             </p>
                             <!-- adds watchlist button-->
-                    
                         </div>
-                         <!-- adds watchlist button-->
-                        <p id = "watchlist" class="control" >
-                            <button class="button is-info is-medium is-fullwidth">watchList</button>
+                        <p class="control">
+                            <button class="button is-info is-medium is-fullwidth">Watchlist</button>
                         </p>
                     </div>
                 </div>
-
-                <!-- Anime Section 6 -->
-                <div class="column is-one-third">
+                 <!-- Anime Section 6 -->
+                 <div class="column is-one-third">
                     <div class="box">
-                        <p class="title is-size-2">Anime Title 6</p>
-                        <p class="character">place holder for character</p>
-                        <p class="review">place holder for review</p>
-                         <!-- Like and Dislike buttons and counters add button for watchlist -->
+                        <div class="anime-section">
+                            <h2 class="anime-title"></h2>
+                            <img class="anime-cover" src="" alt="Cover Image">
+                            <p class="anime-description"></p>
+                            <ul class="anime-reviews"></ul>
+                            <ul class="anime-characters"></ul>
+                        </div>
+                        <!-- Like and Dislike buttons and counters add button for watchlist -->
                         <div class="field is-grouped">
-                            <p id = "like" class="control" >
-                                <button class="button is-success is-medium is-fullwidth" onclick="likeAnime(1)">Like</button>
+                            <p class="control">
+                                <button class="button is-success is-medium is-fullwidth" onclick="likeAnime(6)">Like</button>
                             </p>
-                            <p id = "dislike" class="control" >
-                                <button class="button is-danger is-medium is-fullwidth" onclick="dislikeAnime(1)">Dislike</button>
+                            <p class="control">
+                                <button class="button is-danger is-medium is-fullwidth" onclick="dislikeAnime(6)">Dislike</button>
                             </p>
                             <!-- adds watchlist button-->
-                    
                         </div>
-                         <!-- adds watchlist button-->
-                        <p id = "watchlist" class="control" >
-                            <button class="button is-info is-medium is-fullwidth">watchList</button>
+                        <p class="control">
+                            <button class="button is-info is-medium is-fullwidth">Watchlist</button>
                         </p>
                     </div>
                 </div>
-
-                <!-- Anime Section 8 -->
-                <div class="column is-one-third">
-                    <div class="box">
-                        <p class="title is-size-2">Anime Title 8</p>
-                        <p class="character">place holder for character</p>
-                        <p class="review">place holder for review</p>
-                         <!-- Like and Dislike buttons and counters add button for watchlist -->
-                        <div class="field is-grouped">
-                            <p id = "like" class="control" >
-                                <button class="button is-success is-medium is-fullwidth" onclick="likeAnime(1)">Like</button>
-                            </p>
-                            <p id = "dislike" class="control" >
-                                <button class="button is-danger is-medium is-fullwidth" onclick="dislikeAnime(1)">Dislike</button>
-                            </p>
-                            <!-- adds watchlist button-->
-                    
+                <button id="reload-button">Reload</button>
+                <!-- Pop-up Window -->
+                <div id="popup" class="modal">
+                    <div class="modal-background"></div>
+                    <div class="modal-content">
+                        <div class="box">
+                            <button class="delete" onclick="closePopup()"></button>
+                            <h2 id="popupTitle" class="title"></h2>
+                            <p id="popupDescription" class="subtitle"></p>
+                            <img id="popupImage" src="" alt="Anime Image">
                         </div>
-                         <!-- adds watchlist button-->
-                        <p id = "watchlist" class="control" >
-                            <button class="button is-info is-medium is-fullwidth">watchList</button>
-                        </p>
-                    </div>
+                    </div>   
                 </div>
-
-                <!-- Anime Section 9 -->
-                <div class="column is-one-third">
-                    <div class="box">
-                        <p class="title is-size-2">Anime Title 9</p>
-                        <p class="character">place holder for character</p>
-                        <p class="review">place holder for review</p>
-                         <!-- Like and Dislike buttons and counters add button for watchlist -->
-                        <div class="field is-grouped">
-                            <p id = "like" class="control" >
-                                <button class="button is-success is-medium is-fullwidth" onclick="likeAnime(1)">Like</button>
-                            </p>
-                            <p id = "dislike" class="control" >
-                                <button class="button is-danger is-medium is-fullwidth" onclick="dislikeAnime(1)">Dislike</button>
-                            </p>
-                            <!-- adds watchlist button-->
-                    
-                        </div>
-                         <!-- adds watchlist button-->
-                        <p id = "watchlist" class="control" >
-                            <button class="button is-info is-medium is-fullwidth">watchList</button>
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Anime Section 10 -->
-                <div class="column is-one-third">
-                    <div class="box">
-                        <p class="title is-size-2">Anime Title 10</p>
-                        <p class="character">place holder for character</p>
-                        <p class="review">place holder for review</p>
-                         <!-- Like and Dislike buttons and counters add button for watchlist -->
-                        <div class="field is-grouped">
-                            <p id = "like" class="control" >
-                                <button class="button is-success is-medium is-fullwidth" onclick="likeAnime(1)">Like</button>
-                            </p>
-                            <p id = "dislike" class="control" >
-                                <button class="button is-danger is-medium is-fullwidth" onclick="dislikeAnime(1)">Dislike</button>
-                            </p>
-                            <!-- adds watchlist button-->
-                    
-                        </div>
-                         <!-- adds watchlist button-->
-                        <p id = "watchlist" class="control" >
-                            <button class="button is-info is-medium is-fullwidth">watchList</button>
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Anime Section 11 -->
-                <div class="column is-one-third">
-                    <div class="box">
-                        <p class="title is-size-2">Anime Title 11</p>
-                        <p class="character">place holder for character</p>
-                        <p class="review">place holder for review</p>
-                         <!-- Like and Dislike buttons and counters add button for watchlist -->
-                        <div class="field is-grouped">
-                            <p id = "like" class="control" >
-                                <button class="button is-success is-medium is-fullwidth" onclick="likeAnime(1)">Like</button>
-                            </p>
-                            <p id = "dislike" class="control" >
-                                <button class="button is-danger is-medium is-fullwidth" onclick="dislikeAnime(1)">Dislike</button>
-                            </p>
-                            <!-- adds watchlist button-->
-                    
-                        </div>
-                         <!-- adds watchlist button-->
-                        <p id = "watchlist" class="control" >
-                            <button class="button is-info is-medium is-fullwidth">watchList</button>
-                        </p>
-                    </div>
-                </div>
-                <!-- Anime Section 12 -->
-                <div class="column is-one-third">
-                    <div class="box">
-                        <p class="title is-size-2">Anime Title 12</p>
-                        <p class="character">place holder for character</p>
-                        <p class="review">place holder for review</p>
-                         <!-- Like and Dislike buttons and counters add button for watchlist -->
-                        <div class="field is-grouped">
-                            <p id = "like" class="control" >
-                                <button class="button is-success is-medium is-fullwidth" onclick="likeAnime(1)">Like</button>
-                            </p>
-                            <p id = "dislike" class="control" >
-                                <button class="button is-danger is-medium is-fullwidth" onclick="dislikeAnime(1)">Dislike</button>
-                            </p>
-                            <!-- adds watchlist button-->
-                    
-                        </div>
-                         <!-- adds watchlist button-->
-                        <p id = "watchlist" class="control" >
-                            <button class="button is-info is-medium is-fullwidth">watchList</button>
-                        </p>
-                    </div>
-                </div>
-                                <!-- Anime Section 1 -->
-                                <div class="column is-one-third">
-                                    <div class="box">
-                                        <p class="title is-size-2">Anime Title 1</p>
-                                        <p class="character">place holder for character</p>
-                                        <p class="review">place holder for review</p>
-                                         <!-- Like and Dislike buttons and counters add button for watchlist -->
-                                        <div class="field is-grouped">
-                                            <p id = "like" class="control" >
-                                                <button class="button is-success is-medium is-fullwidth" onclick="likeAnime(1)">Like</button>
-                                            </p>
-                                            <p id = "dislike" class="control" >
-                                                <button class="button is-danger is-medium is-fullwidth" onclick="dislikeAnime(1)">Dislike</button>
-                                            </p>
-                                            <!-- adds watchlist button-->
-                                    
-                                        </div>
-                                         <!-- adds watchlist button-->
-                                        <p id = "watchlist" class="control" >
-                                            <button class="button is-info is-medium is-fullwidth">watchList</button>
-                                        </p>
-                                    </div>
-                                </div>
-                 <!-- Pop-up Window -->
-    <div id="popup" class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-            <div class="box">
-                <button class="delete" onclick="closePopup()"></button>
-                <h2 id="popupTitle" class="title"></h2>
-                <p id="popupDescription" class="subtitle"></p>
-                <img id="popupImage" src="" alt="Anime Image">
+                    <!-- Add a button to navigate to the watchlist page -->
+                            <div class="has-text-centered">
+                                <a class="button is-primary" href="watchlist.html">Go to Watchlist</a>
+                            </div>
             </div>
         </div>
-    </div>
-          <!-- Add a button to navigate to the watchlist page -->
-                <div class="has-text-centered">
-                    <a class="button is-primary" href="watchlist.html">Go to Watchlist</a>
-                </div>
-            </div>
-        </div>
-    
     </section>
-       <!-- Anime Rating Form -->
-       <div class="box"> 
-        <form id="watchListForm">
-            <div class="field">
-                <label class="label">watchlist</label>
-                <div class="watchList1">
-                    
-                </div>
-            </div>
-            
-        </form>
-    </div>
-
-    <!-- Display Ratings -->
-    <!-- <div id="ratings-list"> -->
-        <!--== Ratings will be displayed here 
-    </div>
-</div>
-</section>
-    </div>
-  </section>
-  <script src="./assets/css/script.js"></script>
-  </body>
+    <script src="./public/js/api.js"></script>
+    <script src="./public/css/style.css"></script>
+    <script src="./public/js/popup.js"></script>
+</body>
 </html>
