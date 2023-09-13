@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
 const modelsPath = path.join(__dirname, '../models');
-const { User, UserAnime, Anime, Character } = require(modelsPath);
+const { User, UserAnime, Anime, Character } = require('../../models');
 
 // Route to get all Users
 router.get('/users', async (req, res) => {
