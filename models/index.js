@@ -1,6 +1,11 @@
 const Anime = require('./Anime');
-const Character = require('./Character');
 const User = require('./User');
-const Users_Anime = require('./Users_anime');
+const UserAnime = require('./UsersAnime');
+const Character = require('./Character');
 
-module.exports = { Anime, Character, User, Users_Anime };
+module.exports = {
+  Anime,
+  User,
+  UserAnime,
+  Character
+};

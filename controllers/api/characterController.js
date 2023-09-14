@@ -1,4 +1,4 @@
-const Character = require('../models/Character'); // Import the Character model
+const Character = require('../../models/Character'); // Import the Character model
 
 // Create a new character record
 exports.createCharacter = async (req, res) => {
@@ -43,7 +43,7 @@ exports.updateCharacter = async (req, res) => {
   const { id } = req.params;
   try {
     const [updated] = await Character.update(req.body, {
-      where: { id },
+      where: { id }
     });
     if (updated) {
       res.status(200).json({ message: 'Character updated successfully' });
@@ -61,7 +61,7 @@ exports.deleteCharacter = async (req, res) => {
   const { id } = req.params;
   try {
     const deleted = await Character.destroy({
-      where: { id },
+      where: { id }
     });
     if (deleted) {
       res.status(204).json();
