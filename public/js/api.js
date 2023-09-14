@@ -127,12 +127,12 @@
   }
 
   // Reload Button Click Event
-document.getElementById("reload-button").addEventListener("click", function () {
-  var animeContainer = document.getElementById("anime-container");
-  animeContainer.innerHTML = "anime-section";
+  document.getElementById('reload-button').addEventListener('click', function() {
+    // Reload the current page
+    location.reload();
+  });
 
   for (var i = 0; i < 6; i++) {
       fetchRandomAnimeData(i);
   }
-});
 });
