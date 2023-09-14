@@ -1,10 +1,10 @@
-const User = require('../models/User'); // Import the User model
+const UserAnime = require('../../models/UsersAnime'); // Import the UserAnime model
 
 // Create a new user record
-exports.createUser = async (req, res) => {
+exports.createUserAnime = async (req, res) => {
   try {
-    const user = await User.create(req.body);
-    res.status(201).json(user);
+    const userAnime = await UserAnime.create(req.body);
+    res.status(201).json(userAnime);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Failed to create user' });
@@ -14,8 +14,8 @@ exports.createUser = async (req, res) => {
 // Get a list of all user records
 exports.getAllUsers = async (req, res) => {
   try {
-    const userList = await User.findAll();
-    res.status(200).json(userList);
+    const userAnimeList = await UserAnime.findAll();
+    res.status(200).json(userAnimeList);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Failed to fetch user list' });
@@ -26,9 +26,9 @@ exports.getAllUsers = async (req, res) => {
 exports.getUserById = async (req, res) => {
   const { id } = req.params;
   try {
-    const user = await User.findByPk(id);
-    if (user) {
-      res.status(200).json(user);
+    const userId = await UserAnime.findByPk(id);
+    if (userId) {
+      res.status(200).json(userId);
     } else {
       res.status(404).json({ error: 'User not found' });
     }
@@ -42,8 +42,8 @@ exports.getUserById = async (req, res) => {
 exports.updateUser = async (req, res) => {
   const { id } = req.params;
   try {
-    const [updated] = await User.update(req.body, {
-      where: { id },
+    const [updated] = await UserAnime.update(req.body, {
+      where: { id }
     });
     if (updated) {
       res.status(200).json({ message: 'User updated successfully' });
@@ -60,8 +60,8 @@ exports.updateUser = async (req, res) => {
 exports.deleteUser = async (req, res) => {
   const { id } = req.params;
   try {
-    const deleted = await User.destroy({
-      where: { id },
+    const deleted = await UserAnime.destroy({
+      where: { id }
     });
     if (deleted) {
       res.status(204).json();
