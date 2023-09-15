@@ -36,3 +36,7 @@
     right: 10px;
     cursor: pointer;
 }
+
+ol li {
+    list-style-type: none;
+}
