@@ -68,7 +68,8 @@ router.get('/:userId/watchlist', async (req, res) => {
   const user = await User.findByPk(userId, {
     include: [
       {
-        model: Anime
+        model: Anime,
+        through: UserAnime
       }
     ]
   });

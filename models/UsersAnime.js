@@ -1,5 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const User = require('./User');
+const Anime = require('./Anime');
 
 const UsersAnime = sequelize.define('users_anime', {
   id: {
