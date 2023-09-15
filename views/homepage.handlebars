@@ -69,23 +69,34 @@
                     </div>
                     <!-- Button to Open Signup Modal -->
                     <button id="open-signup-modal" class="button is-primary" onclick="openSignupPopup()">Sign Up</button>
-                    {{!-- <button class="delete" aria-label="close" id="close-login-modal"></button> --}}
             </div>
         </div>
 </nav>
- 
-<section class="section">
+   <!-- Left Section - Top 5 Favorite Anime -->
+    <section class="section">
         <div class="container">
             <div class="columns">
-                <!-- Left Section - Top 5 Favorite Anime -->
                 <div class="column is-one-forth">
-                    <h2 class="title has-text-centered notification is-danger is-size-2">Top 5</h2>
-                    <ol>
-                        <li class="notification has-background-warning-light has-text-centered is-size-2"><a href="#" onclick="showPopup('Anime 1', 'Description of Anime 1', 'anime1.jpg')">No.1 Anime</a></li>
-                        <li class="notification has-background-info-light has-text-centered is-size-2"><a href="#" onclick="showPopup('Anime 2', 'Description of Anime 2', 'anime2.jpg')">No.2 Anime</a></li>
-                        <li class="notification has-background-success-light has-text-centered is-size-2"><a href="#" onclick="showPopup('Anime 3', 'Description of Anime 3', 'anime3.jpg')">No.3 Anime</a></li>
-                        <li class="notification has-background-danger-light has-text-centered is-size-2"><a href="#" onclick="showPopup('Anime 4', 'Description of Anime 4', 'anime4.jpg')">No.4 Anime</a></li>
-                        <li class="notification has-background-primary-light has-text-centered is-size-2"><a href="#" onclick="showPopup('Anime 5', 'Description of Anime 5', 'anime5.jpg')">No.5 Anime</a></li>
+                    <div class="modal" id="anime-modal">
+                        <div class="modal-background"></div>
+                        <div class="modal-card">
+                        <header class="modal-card-head">
+                            <p class="modal-card-title" id="modal-title"></p>
+                            <button class="delete" aria-label="close" id="close-modal"></button>
+                        </header>
+                        <section class="modal-card-body" id="modal-description"></section>
+                        <section class="modal-card-body" id="modal-image"></section>
+                        <footer class="modal-card-foot">
+                            <button class="button is-primary" id="close-modal-button">Close</button>
+                        </footer>
+                        </div>
+                    </div>
+                    <ol id="top-popular-list">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
                     </ol>
                 </div>
 
@@ -261,6 +272,7 @@
                             </div>
             </div>
         </div>
+    <!-- Watchlist -->
     </section>
         <div class="box"> 
         <form id="watchListForm">
@@ -274,8 +286,9 @@
             </div>
             
         </form>
-    </div>
+        </div>
     <script src="/js/api.js"></script>
     <script src="/css/style.css"></script>
     <script src="/js/popup.js"></script>
     <script src="/js/login.js"></script>
+    <script src="/js/topfive.js"></script>
