@@ -14,5 +14,15 @@ const Anime = sequelize.define('Anime', {
     allowNull: false
   }
 });
-
+//sets the associations for the tables
+Anime.associate = () => {
+  Anime.belongsToMany(User, {
+    through: UsersAnime,
+    foreignKey: 'anime_id'
+  });
+  User.hasMany(Anime, {
+    through: UsersAnime,
+    foreignKey: 'user_id'
+  });
+};
 module.exports = Anime;

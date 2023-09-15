@@ -62,6 +62,23 @@ router.post('/:userId/watchlist', async (req, res) => {
   }
 });
 
+router.get('/:userId/watchlist', async (req, res) => {
+  const { userId } = req.params;
+  // try{
+  const user = await User.findByPk(userId, {
+    include: [
+      {
+        model: Anime
+      }
+    ]
+  });
+  console.log('USER', user);
+  if (!user) {
+    return res.status(404).json({ error: 'User not found' });
+  }
+  // }
+});
+
 // Update an existing user record by ID
 router.put('/:id', async (req, res) => {
   const { id } = req.params;
