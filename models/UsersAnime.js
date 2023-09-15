@@ -1,5 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const User = require('./User');
+const Anime = require('./Anime');
 
 const UsersAnime = sequelize.define('users_anime', {
   id: {
@@ -28,13 +30,13 @@ const UsersAnime = sequelize.define('users_anime', {
 });
 
 // Define associations for the many-to-many relationship
-UsersAnime.associate = (models) => {
-  models.User.belongsToMany(models.Anime, {
+UsersAnime.associate = () => {
+  User.hasMany(Anime, {
     through: UsersAnime,
     foreignKey: 'user_id'
   });
 
-  models.Anime.belongsToMany(models.User, {
+  Anime.belongsToMany(User, {
     through: UsersAnime,
     foreignKey: 'anime_id'
   });

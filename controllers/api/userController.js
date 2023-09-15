@@ -1,12 +1,17 @@
-const { User, UserAnime, Anime } = require('../../models'); // Import the User model
+const { User, UsersAnime, Anime } = require('../../models'); // Import the User model
+const bcrypt = require('bcrypt');
 const express = require('express');
+const UsersAnime = require('../../models/UsersAnime');
+const { Sequelize } = require('sequelize');
 const router = express.Router();
 
-// Create a new user record
+// Create a new user record and hashes the password
 router.post('/', async (req, res) => {
   try {
-    const user = await User.create(req.body);
-    res.status(201).json(user);
+    const newUser = req.body;
+    newUser.password = await bcrypt.hash(req.body.password, 10);
+    const userData = await User.create(newUser);
+    res.status(200).json(userData);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Failed to create user' });
@@ -39,7 +44,7 @@ router.get('/:id', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch user by ID' });
   }
 });
-
+//Adding the watchlist
 router.post('/:userId/watchlist', async (req, res) => {
   const { userId } = req.params;
   try {
@@ -50,9 +55,10 @@ router.post('/:userId/watchlist', async (req, res) => {
         title: req.body.title
       });
     }
-    const userAnime = await UserAnime.create({
+    const userAnime = await UsersAnime.create({
       user_id: userId,
       anime_id: req.body.id,
+      anime_title: req.body.title,
       watchlist: true
     });
     res.status(200).json(userAnime);
@@ -60,6 +66,23 @@ router.post('/:userId/watchlist', async (req, res) => {
     console.error(error);
     res.status(500).json({ error: 'Failed to fetch user by ID' });
   }
+});
+
+router.get('/:userId/watchlist', async (req, res) => {
+  const { userId } = req.params;
+  // try{
+  const user = await User.findByPk(userId, {
+    include: [
+      {
+        model: Anime
+      }
+    ]
+  });
+  console.log('USER', user);
+  if (!user) {
+    return res.status(404).json({ error: 'User not found' });
+  }
+  // }
 });
 
 // Update an existing user record by ID
