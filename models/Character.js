@@ -1,22 +1,12 @@
 const { DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
-module.exports = (sequelize) => {
-  const Character = sequelize.define('Character', {
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    description: DataTypes.TEXT,
-  });
+const Character = sequelize.define('Character', {
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  description: DataTypes.TEXT,
+});
 
-  // Define associations (e.g., each character belongs to an anime)
-  Character.associate = (models) => {
-    Character.belongsTo(models.Anime, {
-      foreignKey: {
-        allowNull: false,
-      },
-    });
-  };
-
-  return Character;
-};
+module.exports = Character;

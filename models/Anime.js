@@ -16,15 +16,5 @@ const Anime = sequelize.define('animes', {
     allowNull: false
   }
 });
-Anime.associate = () => {
-  Anime.belongsToMany(User, {
-    through: UsersAnime,
-    foreignKey: 'anime_id'
-  });
-  User.hasMany(Anime, {
-    through: UsersAnime,
-    foreignKey: 'user_id'
-  });
-};
 
 module.exports = Anime;

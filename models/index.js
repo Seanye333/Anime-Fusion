@@ -1,6 +1,8 @@
 const Anime = require('./Anime');
-const Character = require('./Character');
 const User = require('./User');
 const UsersAnime = require('./UsersAnime');
 
-module.exports = { Anime, Character, User, UsersAnime };
+User.belongsToMany(Anime, { through: UsersAnime, foreignKey: 'user_id' });
+Anime.belongsToMany(User, { through: UsersAnime, foreignKey: 'anime_id' });
+
+module.exports = { Anime, User, UsersAnime };
