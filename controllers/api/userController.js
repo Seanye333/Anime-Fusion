@@ -1,7 +1,6 @@
 const { User, UsersAnime, Anime } = require('../../models'); // Import the User model
 const bcrypt = require('bcrypt');
 const express = require('express');
-const UsersAnime = require('../../models/UsersAnime');
 const { Sequelize } = require('sequelize');
 const router = express.Router();
 
@@ -70,19 +69,33 @@ router.post('/:userId/watchlist', async (req, res) => {
 
 router.get('/:userId/watchlist', async (req, res) => {
   const { userId } = req.params;
-  // try{
-  const user = await User.findByPk(userId, {
-    include: [
-      {
-        model: Anime
+  try{
+    const user = await User.findByPk(userId, {
+      include: [
+        {
+          model: Anime,
+          through: {
+            model: UsersAnime,
+            where: {
+              watchlist: true
+            }
+          }
+        }
+      ],
+      where: {
+
       }
-    ]
-  });
-  console.log('USER', user);
-  if (!user) {
-    return res.status(404).json({ error: 'User not found' });
+    });
+    console.log('USER', user);
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    const userWatchlist = user.get({ plain: true });
+    res.status(200).json(userWatchlist)
+  } catch (e) {
+    console.error(e);
+    return res.status(500).json({error: 'Server error occurred' });
   }
-  // }
 });
 
 // Update an existing user record by ID
