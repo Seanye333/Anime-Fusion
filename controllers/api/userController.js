@@ -5,12 +5,21 @@ const express = require('express');
 const { Sequelize } = require('sequelize');
 const router = express.Router();
 
-// Create a new user record and hashes the password
-router.post('/', async (req, res) => {
+// Create a new user record
+router.post('/login', async (req, res) => {
+  const { userId } = req.params;
   try {
-    const newUser = req.body;
-    newUser.password = await bcrypt.hash(req.body.password, 10);
-    const userData = await User.create(newUser);
+    const userRecord = User.findByPk(req.body.id);
+    if (!userRecord) {
+      await User.create({
+        id: userId,
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password
+      });
+    } else {
+    }
+
     res.status(200).json(userData);
   } catch (error) {
     console.error(error);
@@ -70,7 +79,7 @@ router.post('/:userId/watchlist', async (req, res) => {
 
 router.get('/:userId/watchlist', async (req, res) => {
   const { userId } = req.params;
-  try{
+  try {
     const user = await User.findByPk(userId, {
       include: [
         {
@@ -83,19 +92,17 @@ router.get('/:userId/watchlist', async (req, res) => {
           }
         }
       ],
-      where: {
-
-      }
+      where: {}
     });
     console.log('USER', user);
     if (!user) {
       return res.status(404).json({ error: 'User not found' });
     }
     const userWatchlist = user.get({ plain: true });
-    res.status(200).json(userWatchlist)
+    res.status(200).json(userWatchlist);
   } catch (e) {
     console.error(e);
-    return res.status(500).json({error: 'Server error occurred' });
+    return res.status(500).json({ error: 'Server error occurred' });
   }
 });
 
