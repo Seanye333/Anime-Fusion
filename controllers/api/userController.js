@@ -1,7 +1,6 @@
 const { User, UsersAnime, Anime } = require('../../models'); // Import the User model
 const bcrypt = require('bcrypt');
 const express = require('express');
-const UsersAnime = require('../../models/UsersAnime');
 const { Sequelize } = require('sequelize');
 const router = express.Router();
 
