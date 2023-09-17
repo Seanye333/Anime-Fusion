@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var animeTitle =
       data.title.english || data.title.romaji || data.title.native;
     var animeDescription = data.description;
-    var reviews = data.reviews.edges;
+    // var reviews = data.reviews.edges;
     var mainCharacters = data.characters.edges;
     var coverImage = data.coverImage.large;
     var id = data.id;
@@ -142,16 +142,13 @@ document.addEventListener('DOMContentLoaded', function () {
     var randomAnimeID =
       Math.floor(Math.random() * (maxAnimeID - minAnimeID + 1)) + minAnimeID;
     fetchAnimeDataWithID(randomAnimeID, sectionIndex);
-    console.log(randomAnimeID)
-    console.log(sectionIndex)
   }
 
   // Display 6 random animes
   for (var i = 0; i < 6; i++) {
     fetchRandomAnimeData(i);
-    
   }
-  
+
   // Reload Button Click Event
   document
     .getElementById('reload-button')
