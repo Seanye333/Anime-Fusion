@@ -1,19 +1,33 @@
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
-  const username = document.querySelector('#username-signup').value.trim();
-  const email = document.querySelector('#email-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
+  const signupUsername = document
+    .querySelector('#username-signup')
+    .value.trim();
+  const signupEmail = document.querySelector('#email-signup').value.trim();
+  const signupPassword = document
+    .querySelector('#password-signup')
+    .value.trim();
 
-  if (username && email && password) {
-    const response = await axios.post('/api/users', {
-      username,
-      email,
-      password,
-      headers: {
-        'Content-Type': 'application/json'
+  if (signupUsername && signupEmail && signupPassword) {
+    try {
+      const response = await axios.post('/api/users/signup', {
+        signupUsername,
+        signupEmail,
+        signupPassword
+      });
+
+      if (response.ok) {
+        console.log('Signup successful:', response);
+        document.location.replace('/homepage');
+      } else {
+        console.error('Failed to sign up:', response);
+        alert('Failed to sign up');
       }
-    });
+    } catch (error) {
+      console.error('Error signing up:', error);
+      alert('Failed to sign up');
+    }
   }
 };
 
@@ -24,10 +38,24 @@ const loginFormHandler = async (event) => {
   const password = document.querySelector('#password-login').value.trim();
 
   if (email && password) {
-    const response = await axios.get('/api/users', {
-      email,
-      password
-    });
+    try {
+      const response = await fetch('/api/users/login', {
+        method: 'POST',
+        body: JSON.stringify({ email, password }),
+        headers: { 'Content-Type': 'application/json' }
+      });
+
+      if (response.ok) {
+        console.log('Login successful:', response);
+        document.location.replace('/homepage');
+      } else {
+        console.error('Failed to log in:', response);
+        alert('Failed to log in');
+      }
+    } catch (error) {
+      console.error('Error logging in:', error);
+      alert('Failed to log in');
+    }
   }
 };
 
