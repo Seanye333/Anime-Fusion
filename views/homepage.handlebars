@@ -52,8 +52,31 @@
                         </div>
                         <p class="control">
                             <button class="button is-info is-medium is-fullwidth watchlist">Watchlist</button>
+                         <!-- modal button -->
                         </p>
+                          <p class="control">
+                            <button class="js-modal-trigger" data-target="animeModal1">description</button>
+                        </p>
+                        <!-- modal html -->
+                        <div id="animeModal1" class="modal">
+                        <div class="modal-background"></div>
+
+                            <div class="modal-content">
+                                <div class="box">
+                                    <div class="anime-section">
+                                        <h2 class="anime-title"></h2>
+                                        <img class="anime-cover" src="" alt="Cover Image">
+                                        <p class="anime-description"></p>
+                                        <ul class="anime-reviews"></ul>
+                                        <ul class="anime-characters"></ul>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                            <button class="modal-close is-large" aria-label="close"></button>
+                        </div>
                     </div>
+                  
                 </div>
                  <!-- Anime Section 2 -->
                 <div class="column is-one-third">
@@ -77,6 +100,9 @@
                         </div>
                         <p class="control">
                             <button class="button is-info is-medium is-fullwidth watchlist">Watchlist</button>
+                        </p>
+                         <p class="control">
+                            <button class="js-modal-trigger" data-target="animeModal1">description</button>
                         </p>
                     </div>
                 </div>
@@ -219,3 +245,4 @@
     <script src="/js/popup.js"></script>
     <script src="/js/login.js"></script>
     <script src="/js/topfive.js"></script>
+    <script src="/js/modalPop.js"></script>
