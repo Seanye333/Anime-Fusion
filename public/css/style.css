@@ -38,6 +38,14 @@
 }
 
 .anime-description {
-    max-height: 200px; /* Adjust the maximum height as needed */
-    overflow-y: auto;
-  }
+    max-height: 100px; /* Adjust the maximum height as needed */
+       overflow-y: auto;
+}
+.anime-characters {
+    max-height: 50px; /* Adjust the maximum height as needed */
+       overflow-y: auto;
+}
+.fixed-size-image {
+   width: 200px; 
+   height: 300px;
+}
