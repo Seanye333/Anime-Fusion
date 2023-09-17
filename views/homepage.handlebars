@@ -35,10 +35,11 @@
                     <div class="box">
                         <div class="anime-section">
                             <h2 class="anime-title"></h2>
-                            <img class="anime-cover" src="" alt="Cover Image">
+                            <img class="anime-cover fixed-size-image" src="" alt="Cover Image">
+                            <P>Description:</P>
                             <p class="anime-description"></p>
                             <ul class="anime-reviews"></ul>
-                            <ul class="anime-characters"></ul>
+                            <ul class="anime-characters"> Main Characters:</ul>
                         </div>
                          <!-- Like and Dislike buttons and counters add button for watchlist -->
                         <div class="field is-grouped">
@@ -54,9 +55,9 @@
                             <button class="button is-info is-medium is-fullwidth watchlist">Watchlist</button>
                          <!-- modal button -->
                         </p>
-                          <p class="control">
+                          {{!-- <p class="control">
                             <button class="js-modal-trigger" data-target="animeModal1">description</button>
-                        </p>
+                        </p> --}}
                         <!-- modal html -->
                         <div id="animeModal1" class="modal">
                         <div class="modal-background"></div>
@@ -71,22 +72,36 @@
                                         <ul class="anime-characters"></ul>
                                     </div>
                                 </div>
-                            
+                               
                         </div>
                             <button class="modal-close is-large" aria-label="close"></button>
                         </div>
                     </div>
-                  
+                   <style>
+                    .anime-description {
+                                 max-height: 100px; /* Adjust the maximum height as needed */
+                                    overflow-y: auto;
+                        }
+                    .anime-characters {
+                                 max-height: 50px; /* Adjust the maximum height as needed */
+                                    overflow-y: auto;
+                        }
+                    .fixed-size-image {
+                                width: 200px; 
+                                height: 300px;
+                        }
+                    </style>
                 </div>
                  <!-- Anime Section 2 -->
                 <div class="column is-one-third">
                     <div class="box">
                         <div class="anime-section">
-                            <h2 class="anime-title"></h2>
-                            <img class="anime-cover" src="" alt="Cover Image">
+                           <h2 class="anime-title"></h2>
+                            <img class="anime-cover fixed-size-image" src="" alt="Cover Image">
+                            <P>Description:</P>
                             <p class="anime-description"></p>
                             <ul class="anime-reviews"></ul>
-                            <ul class="anime-characters"></ul>
+                            <ul class="anime-characters"> Main Characters:</ul>
                         </div>
                          <!-- Like and Dislike buttons and counters add button for watchlist -->
                         <div class="field is-grouped">
@@ -101,20 +116,21 @@
                         <p class="control">
                             <button class="button is-info is-medium is-fullwidth watchlist">Watchlist</button>
                         </p>
-                         <p class="control">
+                         {{!-- <p class="control">
                             <button class="js-modal-trigger" data-target="animeModal1">description</button>
-                        </p>
+                        </p> --}}
                     </div>
                 </div>
                 <!-- Anime Section 3 -->
                 <div class="column is-one-third">
                     <div class="box">
                         <div class="anime-section">
-                            <h2 class="anime-title"></h2>
-                            <img class="anime-cover" src="" alt="Cover Image">
+                          <h2 class="anime-title"></h2>
+                            <img class="anime-cover fixed-size-image" src="" alt="Cover Image">
+                            <P>Description:</P>
                             <p class="anime-description"></p>
                             <ul class="anime-reviews"></ul>
-                            <ul class="anime-characters"></ul>
+                            <ul class="anime-characters"> Main Characters:</ul>
                         </div>
                         <!-- Like and Dislike buttons and counters add button for watchlist -->
                         <div class="field is-grouped">
@@ -136,10 +152,11 @@
                     <div class="box">
                         <div class="anime-section">
                             <h2 class="anime-title"></h2>
-                            <img class="anime-cover" src="" alt="Cover Image">
+                            <img class="anime-cover fixed-size-image" src="" alt="Cover Image">
+                            <P>Description:</P>
                             <p class="anime-description"></p>
                             <ul class="anime-reviews"></ul>
-                            <ul class="anime-characters"></ul>
+                            <ul class="anime-characters"> Main Characters:</ul>
                         </div>
                         <!-- Like and Dislike buttons and counters add button for watchlist -->
                         <div class="field is-grouped">
@@ -161,10 +178,11 @@
                     <div class="box">
                         <div class="anime-section">
                             <h2 class="anime-title"></h2>
-                            <img class="anime-cover" src="" alt="Cover Image">
+                            <img class="anime-cover fixed-size-image" src="" alt="Cover Image">
+                            <P>Description:</P>
                             <p class="anime-description"></p>
                             <ul class="anime-reviews"></ul>
-                            <ul class="anime-characters"></ul>
+                            <ul class="anime-characters"> Main Characters:</ul>
                         </div>
                         <!-- Like and Dislike buttons and counters add button for watchlist -->
                         <div class="field is-grouped">
@@ -186,7 +204,7 @@
                     <div class="box">
                         <div class="anime-section">
                             <h2 class="anime-title"></h2>
-                            <img class="anime-cover" src="" alt="Cover Image">
+                            <img class="anime-cover fixed-size-image" src="" alt="Cover Image">
                             <p class="anime-description"></p>
                             <ul class="anime-reviews"></ul>
                             <ul class="anime-characters"></ul>
