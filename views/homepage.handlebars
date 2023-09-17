@@ -1,12 +1,11 @@
-
-   <!-- Left Section - Top 5 Favorite Anime -->
-    <section class="section">
-        <div class="container">
+<!-- Left Section - Top 5 Favorite Anime -->
+    <section class="section" style="padding: 1px;">
+        <div class="container has-text-centered" style="padding: 2px;">
             <div class="columns">
-                <div class="column is-one-forth">
+                <div class="column is-one-fifth" style="padding: 10px;">
                     <div class="modal" id="anime-modal">
                         <div class="modal-background"></div>
-                        <div class="modal-card">
+                        <div class="modal-card ">
                         <header class="modal-card-head">
                             <p class="modal-card-title" id="modal-title"></p>
                             <button class="delete" aria-label="close" id="close-modal"></button>
@@ -18,17 +17,42 @@
                         </footer>
                         </div>
                     </div>
-                    <ol id="top-popular-list">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ol>
+                        <div class="has-background-info has-text-white p-2">
+                            <p class="is-size-5 has-text-centered" style="padding: 10px;">Top 5 Favorite Animes</p>
+                        </div>
+                        <ol id="top-popular-list" class="is-size-5 is-hoverable" style="list-style-type: none;">
+                            <div class="box">
+                                <li class="has-background-warning" style="padding: 5px;">
+                                    List Item 1
+                                </li>
+                            </div>
+                            <div class="box">
+                                <li class="has-background-warning" style="padding: 5px;">
+                                    List Item 2
+                                </li>
+                            </div>
+                            <div class="box">
+                                <li class="has-background-warning" style="padding: 5px;">
+                                    List Item 3
+                                </li>
+                            </div>
+                            <div class="box">
+                                <li class="has-background-warning" style="padding: 5px;">
+                                    List Item 4
+                                </li>
+                            </div>
+                            <div class="box">
+                                <li class="has-background-warning" style="padding: 5px;">
+                                    List Item 5
+                                </li>
+                            </div>
+                        </ol>
                 </div>
-
-    <section class="section">
+    <section class="section" style="padding: 10px;">
         <div class="container">
+                <div class="has-background-info has-text-white p-2">
+                    <p class="is-size-5 has-text-centered" style="padding: 10px;">Random Generated Animes</p>
+                </div>
             <div class="columns is-multiline">
                 <!-- Anime Section 1 -->
                 <div class="column is-one-third">
@@ -79,17 +103,17 @@
                     </div>
                    <style>
                     .anime-description {
-                                 max-height: 100px; /* Adjust the maximum height as needed */
+                                 max-height: 100px; 
                                     overflow-y: auto;
                         }
                     .anime-characters {
-                                 max-height: 50px; /* Adjust the maximum height as needed */
+                                 max-height: 50px; 
                                     overflow-y: auto;
                         }
                     .fixed-size-image {
                                 width: 200px; 
                                 height: 300px;
-                        }
+                    }
                     </style>
                 </div>
                  <!-- Anime Section 2 -->
@@ -203,11 +227,14 @@
                  <div class="column is-one-third">
                     <div class="box">
                         <div class="anime-section">
+                           <div class="anime-section">
                             <h2 class="anime-title"></h2>
                             <img class="anime-cover fixed-size-image" src="" alt="Cover Image">
+                            <P>Description:</P>
                             <p class="anime-description"></p>
                             <ul class="anime-reviews"></ul>
-                            <ul class="anime-characters"></ul>
+                            <ul class="anime-characters"> Main Characters:</ul>
+                        </div>
                         </div>
                         <!-- Like and Dislike buttons and counters add button for watchlist -->
                         <div class="field is-grouped">
@@ -245,19 +272,23 @@
         </div>
     <!-- Watchlist -->
     </section>
-        <div class="box"> 
+    <section class="section" style="padding: 10px;">
+        <div class="has-background-info has-text-white p-2">
+            <p class="is-size-5 has-text-centered" style="padding: 10px;"> Watchlist</p>
+        </div>  
+        <div class="box">   
         <form id="watchListForm">
             <div class="field">
-                <label class="label">watchlist</label>
+                <label class="label">watchlist items</label>
                 <div class="watchList1">
                  <ol class = "animeList">
                   
                  </ol>   
                 </div>
-            </div>
-            
+            </div>    
         </form>
         </div>
+    </section>
     <script src="/js/api.js"></script>
     <script src="/css/style.css"></script>
     <script src="/js/popup.js"></script>

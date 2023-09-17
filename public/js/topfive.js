@@ -40,10 +40,10 @@ async function fetchAndDisplayTopPopularAnime() {
         const listItem = document.createElement('li');
         listItem.innerHTML = `
           <div>
-            <img class="anime-image" src="${anime.coverImage.medium}" alt="${animeTitle}">
+            <a href="#" data-title="${animeTitle}" data-description="${anime.description}" data-image="${anime.coverImage.large}" onclick="openModal(this)">No.${index + 1} ${animeTitle}</a>
           </div>
           <div>
-            <a href="#" data-title="${animeTitle}" data-description="${anime.description}" data-image="${anime.coverImage.large}" onclick="openModal(this)">No.${index + 1} ${animeTitle}</a>
+            <img class="anime-image" src="${anime.coverImage.medium}" alt="${animeTitle}">
           </div>
         `;
         topPopularList.appendChild(listItem);
