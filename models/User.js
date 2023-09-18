@@ -12,7 +12,6 @@ User.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      unique: true,
       autoIncrement: true,
       allowNull: false,
       primaryKey: true

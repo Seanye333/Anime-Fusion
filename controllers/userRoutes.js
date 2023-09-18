@@ -6,7 +6,7 @@ const withAuth = require('../utils/auth');
 // Create a new user record
 router.post('/signup', async (req, res) => {
   try {
-    const dbUserData = User.create({
+    const dbUserData = await User.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password

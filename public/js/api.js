@@ -1,4 +1,5 @@
 // Define the AniList API endpoint
+
 var apiUrl = 'https://graphql.anilist.co';
 
 // GraphQL query to retrieve anime information
@@ -147,18 +148,16 @@ document.addEventListener('DOMContentLoaded', function () {
   // Display 6 random animes
   for (var i = 0; i < 7; i++) {
     fetchRandomAnimeData(i);
-    console.log(i)
+    console.log(i);
   }
 
-  const homepage = document.getElementById("homepage")
-  homepage.addEventListener("click", function() {
-    
-    window.location.href = "http://localhost:3000/";
-  })
-  var reload = document.getElementById("reload-button")
+  const homepage = document.getElementById('homepage');
+  homepage.addEventListener('click', function () {
+    window.location.href = 'http://localhost:3000/';
+  });
+  var reload = document.getElementById('reload-button');
   //reload animes
- reload.addEventListener("click", function(){
-  window.location.reload();
- })
-
+  reload.addEventListener('click', function () {
+    window.location.reload();
+  });
 });
