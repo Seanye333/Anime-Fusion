@@ -149,22 +149,17 @@ document.addEventListener('DOMContentLoaded', function () {
     fetchRandomAnimeData(i);
   }
 
-  // Reload Button Click Event
-  // document
-  //   .getElementById('reload-button')
-  //   .addEventListener('click', function () {
-  //     var animeContainer = document.getElementById('anime-container');
-  //     animeContainer.innerHTML = 'anime-section';
 
-  //     for (var i = 0; i < 6; i++) {
-  //       fetchRandomAnimeData(i);
-  //     }
-  //   });
 
    const homepage = document.getElementById("homepage")
     homepage.addEventListener("click", function() {
       
       window.location.href = "http://localhost:3000/";
     })
+    var reload = document.getElementById("reload-button")
+    //reload animes
+   reload.addEventListener("click", function(){
+    window.location.reload();
+   })
 
 });
