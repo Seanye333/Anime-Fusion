@@ -5,13 +5,18 @@ We wanted to make a randomized page of anime for suggestions for our logged in u
 Hear is a Photo of the website.
 ![title of photo](./assets/images/animePage.jpeg)
 ***
-* link to website and github
-
-    
+# link to website and github
+[LINK TO HEROKU DEPLOY](https://tranquil-coast-73398-b079121c69ee.herokuapp.com/)
+***
+[LINK TO GITHUB](https://github.com/Seanye333/Anime-Fusion)
 ***
 # Technologies Used
-1. Handlebars
+1.  Handlebars
 2. CSS
-3. javascript
-4. Bulma 
-5. api
+3. Javascript
+4. Boulma
+5. graphQl
+6. Sequelize
+7. Express
+8. axios
+
