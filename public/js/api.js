@@ -145,8 +145,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Display 6 random animes
-  for (var i = 0; i < 6; i++) {
+  for (var i = 0; i < 7; i++) {
     fetchRandomAnimeData(i);
+    console.log(i)
   }
 
   const homepage = document.getElementById("homepage")
