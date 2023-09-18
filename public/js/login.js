@@ -1,36 +1,3 @@
-const signupFormHandler = async (event) => {
-  event.preventDefault();
-
-  const signupUsername = document
-    .querySelector('#username-signup')
-    .value.trim();
-  const signupEmail = document.querySelector('#email-signup').value.trim();
-  const signupPassword = document
-    .querySelector('#password-signup')
-    .value.trim();
-
-  if (signupUsername && signupEmail && signupPassword) {
-    try {
-      const response = await axios.post('/api/users/signup', {
-        signupUsername,
-        signupEmail,
-        signupPassword
-      });
-
-      if (response.ok) {
-        console.log('Signup successful:', response);
-        document.location.replace('/homepage');
-      } else {
-        console.error('Failed to sign up:', response);
-        alert('Failed to sign up');
-      }
-    } catch (error) {
-      console.error('Error signing up:', error);
-      alert('Failed to sign up');
-    }
-  }
-};
-
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -38,33 +5,55 @@ const loginFormHandler = async (event) => {
   const password = document.querySelector('#password-login').value.trim();
 
   if (email && password) {
-    try {
-      const response = await fetch('/api/users/login', {
-        method: 'POST',
-        body: JSON.stringify({ email, password }),
-        headers: { 'Content-Type': 'application/json' }
-      });
+    const response = await fetch('/api/users/login', {
+      method: 'POST',
+      body: JSON.stringify({ email, password }),
+      headers: { 'Content-Type': 'application/json' }
+    });
 
-      if (response.ok) {
-        console.log('Login successful:', response);
-        document.location.replace('/homepage');
-      } else {
-        console.error('Failed to log in:', response);
-        alert('Failed to log in');
-      }
-    } catch (error) {
-      console.error('Error logging in:', error);
+    if (response.ok) {
+      console.log('Login successful:', response);
+      document.location.replace('/homepage');
+    } else {
+      console.error('Failed to log in:', response);
       alert('Failed to log in');
     }
   }
 };
 
+const signupFormHandler = async (event) => {
+  event.preventDefault();
+
+  const username = document.querySelector('#username-signup').value.trim();
+  const email = document.querySelector('#email-signup').value.trim();
+  const password = document.querySelector('#password-signup').value.trim();
+
+  if (username && email && password) {
+    const response = await fetch('/api/users', {
+      method: 'POST',
+      body: JSON.stringify({
+        username,
+        email,
+        password
+      }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+
+    if (response.ok) {
+      console.log('Signup successful:', response);
+      document.location.replace('/');
+    } else {
+      console.error('Failed to sign up:', response);
+      alert('Failed to sign up');
+    }
+  }
+};
 document
-  .querySelector('button.signup')
-  .addEventListener('click', signupFormHandler);
+  .querySelector('.signup-form')
+  .addEventListener('submit', signupFormHandler);
 document
-  .querySelector('button.login')
-  .addEventListener('click', loginFormHandler);
+  .querySelector('.login-form')
+  .addEventListener('submit', loginFormHandler);
 
 // // Function to open the signup modal
 // function openSignupPopup() {
